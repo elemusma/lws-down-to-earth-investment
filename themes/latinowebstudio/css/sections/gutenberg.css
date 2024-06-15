@@ -22,3 +22,7 @@ pre.wp-block-code {
     padding-bottom: calc(var(--wp--preset--spacing--30) + 0.75rem);
     padding-left: calc(var(--wp--preset--spacing--30) + 0.75rem); */
 }
+
+.w-100 img {
+    width:100%;
+}

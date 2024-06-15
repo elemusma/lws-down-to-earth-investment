@@ -9,11 +9,11 @@ let blankSpace = document.querySelector('.blank-space');
 let logoMain = document.querySelector('#logoMain');
 let logoSecondary = document.querySelector('#logo-secondary');
 
-let searchIcon = document.querySelector('.search-icon');
+// let searchIcon = document.querySelector('.search-icon');
 
-searchIcon.addEventListener('click', function () {
-    document.querySelector('.search-icon #s').focus();
-});
+// searchIcon.addEventListener('click', function () {
+//     document.querySelector('.search-icon #s').focus();
+// });
 
 window.addEventListener("scroll", parallaxEffect);
 
@@ -22,15 +22,15 @@ function parallaxEffect() {
     // header.classList.remove('position-relative');
 
     if (scrollY < 299) {
-        // blankSpace.style.height = "0px";
-        logoMain.style.width = "75px"
+        blankSpace.style.height = "0px";
+        logoMain.style.width = "100%"
         header.classList.add('position-relative');
 		header.classList.remove('position-fixed');
 		header.classList.remove('scroll');
         // blankSpace.style.height = (((header.offsetHeight)) + "px");
     } else if (scrollY > 300) {
-        // blankSpace.style.height = (((header.offsetHeight) + 10) + "px");
-        logoMain.style.width = "50px"
+        blankSpace.style.height = (((header.offsetHeight) + 10) + "px");
+        logoMain.style.width = "75%"
         header.classList.add('position-fixed');
     	header.classList.remove('position-relative');
         header.classList.add('scroll');

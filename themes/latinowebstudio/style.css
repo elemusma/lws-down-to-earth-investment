@@ -12,11 +12,12 @@ Version: 1.0
     --accent-primary: #69a1a4;
     --accent-secondary: #ab6758;
     --accent-tertiary: #51785f;
-    --accent-quaternary: #fbe2c3;
     --accent-quaternary: #534741;
+    --accent-quinary: #fbe2c3;
     --light: #f9f9f9;
     --light-secondary: #e8edec;
     --text-shadow: 1px 1px 3px black;
+    --box-shadow: 2px 2px 3px rgba(0,0,0,.5);
   }
 
 @media only screen and (min-width:992px) {

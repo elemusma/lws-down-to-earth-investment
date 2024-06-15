@@ -343,54 +343,7 @@ if (in_array($block['blockName'], array('core/image', 'core/columns', 'core/quot
 return $block_content;
 }
 
-add_filter('render_block', 'custom_modify_block_output', 10, 2);
-
-
-// Add a custom user role with default capabilities of the Customer role
-function add_custom_roles() {
-    // Get the capabilities of the Customer role
-    $customer_role = get_role('customer');
-    
-    // If the Customer role exists, add your custom role with the same capabilities
-    if ($customer_role) {
-        add_role(
-            'client_gates_enterprises', // Role slug
-            'Gates Enterprises',      // Role display name
-            $customer_role->capabilities // Use Customer role capabilities
-        );
-    } else {
-        // If the Customer role doesn't exist, you can manually define capabilities or handle the case as needed
-        // For example, you could create your own default capabilities array
-        $custom_capabilities = array(
-            // Define your custom capabilities here
-        );
-        
-        add_role(
-            'specific_client_role', // Role slug
-            'Specific Client',      // Role display name
-            $custom_capabilities   // Use custom capabilities
-        );
-    }
-}
-add_action('init', 'add_custom_roles');
-
-function currentUser() {
-	$user = get_userdata( get_current_user_id() );
-	return $user;
-}
-
-function currentUserGates() {
-	$role_slug = 'client_gates_enterprises';
-	return $role_slug;
-}
-
-// Assigns admin with Gates User Role
-$user_id = 1; // Replace 123 with the actual user ID
-$user = get_user_by('ID', $user_id);
-
-if ($user) {
-    $user->add_role('client_gates_enterprises'); // Assign the role to the user
-}
+// add_filter('render_block', 'custom_modify_block_output', 10, 2);
 
 // $user = get_user_by('login', 'info@latinowebstudio.com'); // Replace 'username' with the username of the user
 // if ($user) {
@@ -463,19 +416,35 @@ CSF::createSection( $prefix, array(
 	'fields' => array(
 
 	  
-	  // A textarea field
+	  // A text field
       array(
-        'id'    => 'company-about',
-        'type'  => 'textarea',
-        'title' => 'Description about the company',
-      ),
+		'id'      => 'opt-text-email',
+		'type'    => 'text',
+		'title'   => 'Email Address',
+		'default' => 'info@domain.com'
+	  ),
 	  
-	  // A textarea field
+	  
+	  // A text field
       array(
-        'id'    => 'company-message',
-        'type'  => 'textarea',
-        'title' => 'Promotions going on in shop.',
-      ),
+		'id'      => 'opt-text-phone',
+		'type'    => 'text',
+		'title'   => 'Phone Number',
+		'default' => '555.555.5555'
+	  ),
+
+	  array(
+		'id'       => 'opt-code-editor-copyright',
+		'type'     => 'code_editor',
+		'title'    => 'HTML Editor',
+		'settings' => array(
+		  'theme'  => 'mdn-like',
+		  'mode'   => 'htmlmixed',
+		),
+		'default'  => '<p>Copyright &copy;</p>',
+	  ),
+	  
+	  
 
       // repeater field
 	  array(
@@ -573,10 +542,20 @@ function codeFooter() {
     global_function(); // call the global function to set $options
     return $options['code-footer'];
 }
-function companyAbout() {
+function companyEmail() {
     global $options;
     global_function(); // call the global function to set $options
-    return $options['company-about'];
+    return $options['opt-text-email'];
+}
+function companyPhone() {
+    global $options;
+    global_function(); // call the global function to set $options
+    return $options['opt-text-phone'];
+}
+function companyCopyright() {
+    global $options;
+    global_function(); // call the global function to set $options
+    return $options['opt-code-editor-copyright'];
 }
 function socialIconsRepeater() {
     global $options;

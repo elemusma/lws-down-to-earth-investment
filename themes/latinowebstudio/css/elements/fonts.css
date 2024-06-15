@@ -57,6 +57,10 @@ a.text-black:hover {
   font-size: 18px;
 }
 
+.small {
+  font-size:80%;
+}
+
 html,
 body {
   font-family: 'poppinsregular';
@@ -107,18 +111,19 @@ strong,b {
   font-family: 'poppinsbold';
 }
 
-.arrows li {
+.checkmark li {
   position: relative;
   list-style: none;
+  margin:20px 0px;
   /* color: #a4a3a3; */
-  text-shadow:var(--text-shadow);
-  font-style: italic;
-  font-family: 'poppinsbold';
+  /* text-shadow:var(--text-shadow); */
+  /* font-style: italic; */
+  /* font-family: 'poppinsbold'; */
 }
 
-.arrows li:before {
+.checkmark li:before {
   content: "";
-  background: url('/wp-content/uploads/2024/03/icon-house.png');
+  background: url('/wp-content/uploads/2024/06/Checkmark.jpg');
   background-repeat: no-repeat;
   background-size: contain;
   width: 20px;
@@ -129,17 +134,17 @@ strong,b {
 }
 
 @media only screen and (max-width:768px) {
-  .arrows li {
+  .checkmark li {
     text-shadow:none;
   }
 }
 
 @media only screen and (max-width:991px) {
-  .text-right .arrows li {
+  .text-right .checkmark li {
     padding-right: 30px;
 }
 
-.text-right .arrows li::before {
+.text-right .checkmark li::before {
     right: 0;
     left: unset;
 }
@@ -159,7 +164,7 @@ blockquote {
 
 @media only screen and (max-width:767px) {
   h1, .h1 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
   h2, .h2 {
     font-size: 2.25rem;

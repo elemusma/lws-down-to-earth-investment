@@ -1,7 +1,18 @@
+.si .social-icons {
+    background:var(--accent-quinary);
+    margin: auto 10px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:all .25s ease-in-out;
+}
 .si svg {
     height:20px;
-    width: auto;
-    fill: white;
+    width: 20px;
+    fill: var(--accent-secondary);
 }
 
 .secondary-nav .si svg {
@@ -32,10 +43,11 @@
 .si a svg path {
     transition: all .25s ease-in-out;
 }
+.si a:hover,
+.si a:hover {
+    background: var(--accent-secondary);
+}
 .si a:hover svg,
 .si a:hover svg path {
-    fill: var(--accent-secondary);
+    fill: var(--accent-quinary);
 }
-/* a:hover .svg-icon path {
-    fill: white;
-} */
