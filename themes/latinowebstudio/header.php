@@ -68,7 +68,7 @@ wp_nav_menu(array(
     'menu_class'=>'menu list-unstyled d-lg-flex h-100 align-items-center justify-content-end m-0'
 ));
 
-echo '<a class="btn-main" href="#get-cash">Get Cash For Your Property</a>';
+echo '<a class="btn-main" href="/#get-cash">Get Cash For Your Property</a>';
 
 echo '</div>';
 

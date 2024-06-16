@@ -41,6 +41,9 @@ a.bg-accent:hover {
 .bg-accent-quaternary {
   background: var(--accent-quaternary);
 }
+.bg-accent-quinary {
+  background: var(--accent-quinary);
+}
 
 a.bg-accent-secondary:hover {
   background: var(--accent-primary);
