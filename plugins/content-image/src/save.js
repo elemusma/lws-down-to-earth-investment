@@ -23,7 +23,7 @@ export default function save({attributes}) {
 		<div {...blockProps}>
 		<section className={`position-relative ${attributes.section_class}`} style={`padding:50px 0;${attributes.section_style}`} id={attributes.section_id}>
 		{attributes.section_image && (
-			<img src={attributes.section_image} alt="" className={`w-100 h-100 position-absolute bg-img ${attributes.section_image_class}`} style={`top:0;left:0;object-fit:cover;pointer-events:none;${attributes.section_image_style}`} />
+			<img src={attributes.section_image} alt={attributes.section_image_alt} className={`w-100 h-100 position-absolute bg-img ${attributes.section_image_class}`} style={`top:0;left:0;object-fit:cover;pointer-events:none;${attributes.section_image_style}`} />
 		)}
 
 			<RawHTML>{attributes.section_block}</RawHTML>
@@ -35,7 +35,7 @@ export default function save({attributes}) {
 					</div>
 					<div className={attributes.col_image_class} style={attributes.col_image_style} id={attributes.col_image_id} data-aos="fade-up">
 					{attributes.col_image && (
-			<img src={attributes.col_image} alt="" className={`${attributes.image_class}`} style={`width:100%;height:auto;${attributes.image_style}`} id={attributes.image_id} />
+			<img src={attributes.col_image} alt={attributes.col_image_alt || ''} className={`${attributes.image_class}`} style={`width:100%;height:auto;${attributes.image_style}`} id={attributes.image_id} />
 		)}
 		</div>
 				</div>

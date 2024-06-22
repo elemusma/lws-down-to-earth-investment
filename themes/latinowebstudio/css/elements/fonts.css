@@ -66,7 +66,7 @@ body {
   font-family: 'poppinsregular';
 }
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
-  font-family: 'poppinsbold';
+  font-family: 'pontiacblack';
   line-height: 1;
   margin:0;
 }
@@ -154,12 +154,12 @@ blockquote {
   font-size: 90%;
 }
 
-.cormorant-garamond {
-  font-family: cormorant-garamond, serif;
+.pontiac-bold,h1,h2,h3,h4 {
+  font-family: 'pontiacblack';
 }
 
-.cormorant-garamond.bold {
-  font-family: cormorant-garamond, serif;
+.pontiac-light {
+  font-family: 'pontiaclight';
 }
 
 @media only screen and (max-width:767px) {

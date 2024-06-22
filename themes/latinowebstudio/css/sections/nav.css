@@ -18,7 +18,12 @@ to {
     top:0%;
 }
 }
-
+.text-black a {
+    color: black !important;
+}
+.text-black a:hover {
+    color: var(--accent-secondary) !important;
+}
 #menu-secondary-nav-top li a {
     font-size: 12px;
     color: black;

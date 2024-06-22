@@ -357,7 +357,10 @@ function Edit({
         objectFit: 'cover'
       }
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
-      onSelect: media => updateColumn(index, 'img', media.url),
+      onSelect: media => updateColumn(index, 'img', {
+        url: media.url,
+        alt: media.alt // Ensure to capture alt text from media
+      }),
       type: "image",
       allowedTypes: ['image'],
       value: column.img,
@@ -607,7 +610,7 @@ function save({
       "data-aos-delay": column.data_aos_delay
     }, column.img && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
       src: column.img,
-      alt: column.title,
+      alt: column.img.alt || column.title,
       style: column.img_style,
       className: column.img_class
     }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.RawHTML, null, column.code_block), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText.Content, {

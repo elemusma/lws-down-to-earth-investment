@@ -54,7 +54,7 @@ echo '<div class="col-lg-3 col-md-4 col-8 text-center">';
 
 echo '<div class="d-md-none" style="height:10px;"></div>';
 
-echo '<a href="' . home_url() . '">';
+echo '<a href="' . home_url() . '" title="Go back to the Home of Down to Earth Investments">';
 echo '<div style="width:100%;pointer-events:none;" id="logoMain">';
 echo logoSVG();
 echo '</div>';
@@ -68,7 +68,7 @@ wp_nav_menu(array(
     'menu_class'=>'menu list-unstyled d-lg-flex h-100 align-items-center justify-content-end m-0'
 ));
 
-echo '<a class="btn-main" href="/#get-cash">Get Cash For Your Property</a>';
+echo '<a class="btn-main" href="/#get-cash" title="Get Cash for Your Property">Get Cash For Your Property</a>';
 
 echo '</div>';
 

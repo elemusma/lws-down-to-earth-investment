@@ -108,7 +108,8 @@ function Edit({
     initialOpen: false
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUploadCheck, null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.MediaUpload, {
     onSelect: media => setAttributes({
-      section_image: media.url
+      section_image: media.url,
+      section_image_alt: media.alt
     }),
     type: "image",
     allowedTypes: ['image'],
@@ -119,7 +120,8 @@ function Edit({
       isLink: true,
       isDestructive: true,
       onClick: () => setAttributes({
-        section_image: ''
+        section_image: '',
+        section_image_alt: ''
       })
     }, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Remove Section Image')), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
       onClick: open,
@@ -354,7 +356,7 @@ function save({
     id: attributes.section_id
   }, attributes.section_image && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: attributes.section_image,
-    alt: "",
+    alt: attributes.section_image_alt,
     className: `w-100 h-100 position-absolute bg-img ${attributes.section_image_class}`,
     style: `top:0;left:0;object-fit:cover;pointer-events:none;${attributes.section_image_style}`
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.RawHTML, null, attributes.section_block), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {

@@ -16,19 +16,17 @@ echo do_shortcode('[divider class="w-100" style="padding-bottom:50px;"]');
 echo '</div>';
 
 echo '<div class="col-lg-3 col-md-4 text-white">';
-echo '<a href="' . home_url() . '">';
+echo '<a href="' . home_url() . '" title="Go back to the Home of Down to Earth Investments">';
 echo '<div style="width:100%;pointer-events:none;padding-top:15px;">';
 echo logoSVG();
 echo '</div>';
 echo '</a>';
 
 echo '</div>';
-// echo '<div class="col-lg-3">';
-// echo '</div>';
 
 echo '<div class="col-lg-6 col-md-8 col-12 d-md-flex justify-content-md-end justify-content-center text-center">';
 echo '<a href="#get-cash" title="Get a Cash Offer" class="btn-main" style="">Get Started</a>';
-echo '<a href="/about/" title="About Us" class="btn-main white" style="">About Us</a>';
+echo '<a href="/about/" title="About Us" title="Go to the about page of Down to Earth Investments" class="btn-main white" style="">About Us</a>';
 echo '</div>';
 echo '</div>';
 
@@ -56,7 +54,7 @@ echo '<span class="close" id="navMenuClose">&times;</span>';
 // echo do_shortcode('[spacer style="height:25px;"]');
 
 echo '<div style="width:100%;max-width:250px;">';
-echo '<a href="' . home_url() . '" title="Discovery Engineering">';
+echo '<a href="' . home_url() . '" title="Go back to the Home of Down to Earth Investments">';
 // echo wp_get_attachment_image(logoImg()['id'],'full','',[
 //     'class'=>'w-100 h-auto',
 // ]);
@@ -71,7 +69,7 @@ wp_nav_menu(array(
     'menu_class'=>'menu list-unstyled'
 ));
 
-echo '<a class="btn-main small" href="#get-cash" style="margin-left: 0;">Get Cash For Your Property</a>';
+echo '<a class="btn-main small" href="#get-cash" title="Get Cash For Your Property" style="margin-left: 0;">Get Cash For Your Property</a>';
 
 echo companyCopyright();
 

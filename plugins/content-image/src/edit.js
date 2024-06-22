@@ -60,32 +60,32 @@ export default function Edit({attributes, setAttributes}) {
 				</PanelBody>
 				<PanelBody title={__('Background Image')} initialOpen={false}>
 				<MediaUploadCheck>
-  <MediaUpload
-    onSelect={(media) => setAttributes({ section_image: media.url })}
-    type="image"
-    allowedTypes={['image']}
-    value={section_image}
-    render={({ open }) => (
-      <div>
-        {section_image && (
-          <Button
-            isLink
-            isDestructive
-            onClick={() => setAttributes({ section_image: '' })}
-          >
-            {__('Remove Section Image')}
-          </Button>
-        )}
+				<MediaUpload
+  onSelect={(media) => setAttributes({ section_image: media.url, section_image_alt: media.alt })}
+  type="image"
+  allowedTypes={['image']}
+  value={section_image}
+  render={({ open }) => (
+    <div>
+      {section_image && (
         <Button
-          onClick={open}
-          icon="upload"
-          className="editor-media-placeholder__button is-button is-default is-large"
+          isLink
+          isDestructive
+          onClick={() => setAttributes({ section_image: '', section_image_alt: '' })}
         >
-          {__('Select Section Image')}
+          {__('Remove Section Image')}
         </Button>
-      </div>
-    )}
-  />
+      )}
+      <Button
+        onClick={open}
+        icon="upload"
+        className="editor-media-placeholder__button is-button is-default is-large"
+      >
+        {__('Select Section Image')}
+      </Button>
+    </div>
+  )}
+/>
 </MediaUploadCheck>
 
 					<InputControl
@@ -183,7 +183,7 @@ export default function Edit({attributes, setAttributes}) {
 					/>
 				<MediaUploadCheck>
   <MediaUpload
-    onSelect={(media) => setAttributes({ col_image: media.url })}
+    onSelect={(media) => setAttributes({ col_image: media.url, col_image_alt: media.alt })}
     type="image"
     allowedTypes={['image']}
     value={col_image}
@@ -193,7 +193,7 @@ export default function Edit({attributes, setAttributes}) {
           <Button
             isLink
             isDestructive
-            onClick={() => setAttributes({ col_image: '' })}
+            onClick={() => setAttributes({ col_image: '', col_image_alt: '' })}
           >
             {__('Remove Col Image')}
           </Button>
@@ -209,6 +209,7 @@ export default function Edit({attributes, setAttributes}) {
     )}
   />
 </MediaUploadCheck>
+
 <InputControl
 						label="Image Class"
 						value={image_class}

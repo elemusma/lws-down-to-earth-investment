@@ -406,49 +406,39 @@ export default function Edit( { attributes, setAttributes } ) {
 											} }
 										/>
 										<MediaUploadCheck>
-											<MediaUpload
-												onSelect={ ( media ) =>
-													updateColumn(
-														index,
-														'img',
-														media.url
-													)
-												}
-												type="image"
-												allowedTypes={ [ 'image' ] }
-												value={ column.img }
-												render={ ( { open } ) => (
-													<div>
-														{ column.img && (
-															<Button
-																isLink
-																isDestructive
-																onClick={ () =>
-																	updateColumn(
-																		index,
-																		'img',
-																		''
-																	)
-																}
-															>
-																{ __(
-																	'Remove Col Image'
-																) }
-															</Button>
-														) }
-														<Button
-															onClick={ open }
-															icon="upload"
-															className="editor-media-placeholder__button is-button is-default is-large"
-														>
-															{ __(
-																'Select Col Image'
-															) }
-														</Button>
-													</div>
-												) }
-											/>
-										</MediaUploadCheck>
+  <MediaUpload
+    onSelect={(media) =>
+      updateColumn(index, 'img', {
+        url: media.url,
+        alt: media.alt, // Ensure to capture alt text from media
+      })
+    }
+    type="image"
+    allowedTypes={['image']}
+    value={column.img}
+    render={({ open }) => (
+      <div>
+        {column.img && (
+          <Button
+            isLink
+            isDestructive
+            onClick={() => updateColumn(index, 'img', '')}
+          >
+            {__('Remove Col Image')}
+          </Button>
+        )}
+        <Button
+          onClick={open}
+          icon="upload"
+          className="editor-media-placeholder__button is-button is-default is-large"
+        >
+          {__('Select Col Image')}
+        </Button>
+      </div>
+    )}
+  />
+</MediaUploadCheck>
+
 
 										<div style={{display:'flex'}}>
 								<div style={{paddingRight:'25px'}}>
@@ -532,17 +522,17 @@ export default function Edit( { attributes, setAttributes } ) {
 										{ /* <p>{ column.content }</p> */ }
 									</div>
 								</div>
-								<Button
-                style={{ border: '1px solid' }}
-                onClick={() => {
-                    const newColumns = [...columns]; // Copy the current columns array
-                    const newColumn = { ...column }; // Copy the current column object
-                    newColumns.splice(index + 1, 0, newColumn); // Insert the copied column after the current one
-                    setAttributes({ columns: newColumns }); // Update state or attributes with the new array
-                }}
-            >
-                {__('Copy Column')}
-            </Button>
+					<Button
+					style={{ border: '1px solid' }}
+					onClick={() => {
+						const newColumns = [...columns]; // Copy the current columns array
+						const newColumn = { ...column }; // Copy the current column object
+						newColumns.splice(index + 1, 0, newColumn); // Insert the copied column after the current one
+						setAttributes({ columns: newColumns }); // Update state or attributes with the new array
+					}}
+				>
+					{__('Copy Column')}
+				</Button>
 								<Button
     style={{border:'1px solid'}}
     onClick={() => {

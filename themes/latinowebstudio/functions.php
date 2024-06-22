@@ -1,16 +1,5 @@
 <?php
 
-// // Declare WooCommerce Support
-// add_theme_support( 'woocommerce' );
-
-// add_theme_support( 'wc-product-gallery-lightbox' );
-// add_theme_support( 'wc-product-gallery-zoom' );
-// add_theme_support( 'wc-product-gallery-slider' );
-
-// include_once('woocommerce/mods.php');
-// include_once('woocommerce/mods-checkout.php');
-// include_once('woocommerce/mods-payment-methods.php');
-
 function down_to_earth_investments_stylesheets() {
 wp_enqueue_style('style', get_stylesheet_uri() );
 
@@ -52,6 +41,7 @@ wp_enqueue_style('fonts', get_theme_file_uri('/css/elements/fonts.css'));
 // wp_enqueue_style('proxima-nova', get_theme_file_uri('/proxima-nova/proxima-nova.css'));
 // wp_enqueue_style('blair-itc', get_theme_file_uri('/blair-itc/blair-itc.css'));
 // wp_enqueue_style('aspira', get_theme_file_uri('/aspira-font/aspira-font.css'));
+wp_enqueue_style('font-pontiac', get_theme_file_uri('/font-pontiac/font-pontiac.css'));
 wp_enqueue_style('font-poppins', get_theme_file_uri('/font-poppins/font-poppins.css'));
 // wp_enqueue_style('coromant-garamond', '//use.typekit.net/fqe2slt.css');
 
