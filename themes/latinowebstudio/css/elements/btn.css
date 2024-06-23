@@ -1,16 +1,16 @@
 .btn-main, .btn-main a,
 span.wc-block-components-button__text {
     background: var(--accent-primary);
-    padding: 5px 35px;
+    padding: 5px 35px 5px;
     transition: all .25s ease-in-out;
     display: inline-block;
     text-decoration: none;
-    color: black!important;
+    color: white;
     text-shadow:none;
     border-radius: 25px;
     text-transform: uppercase;
     border:1px solid var(--accent-primary);
-    font-family: 'poppinssemibold';
+    font-family: 'pontiacbold';
     margin: 10px;
     box-shadow:var(--box-shadow);
 }
@@ -21,15 +21,18 @@ span.wc-block-components-button__text:hover
     background: var(--accent-secondary-hover);
     border-color:var(--accent-secondary-hover);
     text-decoration: none;
+    color:black;
 }
 
 .btn-main.white {
     background:white;
     border-color:#b0b0b0;
+    color:black;
 }
 .btn-main.white:hover {
     background:var(--accent-primary);
     border-color:var(--accent-primary);
+    color:white!important;
 }
 .btn-main.outline {
     border: 1px solid var(--accent-secondary);

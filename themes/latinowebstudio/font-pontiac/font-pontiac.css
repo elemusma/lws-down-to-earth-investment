@@ -22,3 +22,13 @@
     font-style: normal;
 
 }
+
+
+@font-face {
+    font-family: 'pontiacbold';
+    src: url('pontiac-2-webfont.woff2') format('woff2'),
+         url('pontiac-2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

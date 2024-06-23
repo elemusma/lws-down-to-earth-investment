@@ -10,6 +10,7 @@ Version: 1.0
 
 :root {
     --accent-primary: #69a1a4;
+    --accent-primary-light: #CCDFE0;
     --accent-secondary: #ab6758;
     --accent-tertiary: #51785f;
     --accent-quaternary: #534741;

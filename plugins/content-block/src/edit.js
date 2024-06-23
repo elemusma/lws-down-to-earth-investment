@@ -32,7 +32,7 @@ import './editor.scss';
  * @return {Element} Element to render.
  */
 export default function Edit({ attributes, setAttributes }) {
-	const { section_style, section_class, section_id, section_image, section_image_class, section_image_style, section_block, container_style, container_class, container_id, row_style, row_class, row_id, col_style, col_class, col_id, col_data_aos, col_data_aos_delay } = attributes;
+	const { section_style, section_class, section_id, section_image, section_image_class,section_image_alt, section_image_style, section_block, container_style, container_class, container_id, row_style, row_class, row_id, col_style, col_class, col_id, col_data_aos, col_data_aos_delay } = attributes;
 
 	const [value, setValue] = useState('');
 	return (
@@ -59,34 +59,45 @@ export default function Edit({ attributes, setAttributes }) {
 				</PanelBody>
 				<PanelBody title={__('Background Image')} initialOpen={false}>
 				<MediaUploadCheck>
-				<MediaUpload
-  onSelect={(media) => setAttributes({ section_image: media.url, section_image_alt: media.alt })}
-  type="image"
-  allowedTypes={['image']}
-  value={section_image}
-  render={({ open }) => (
-    <div>
-      {section_image && (
-        <Button
-          isLink
-          isDestructive
-          onClick={() => setAttributes({ section_image: '', section_image_alt: '' })}
-        >
-          {__('Remove Section Image')}
-        </Button>
-      )}
-      <Button
-        onClick={open}
-        icon="upload"
-        className="editor-media-placeholder__button is-button is-default is-large"
-      >
-        {__('Select Section Image')}
-      </Button>
-    </div>
-  )}
-/>
-</MediaUploadCheck>
+						<MediaUpload
+							onSelect={ ( media ) =>
+								setAttributes( { section_image: media.url } )
+							}
+							type="image"
+							allowedTypes={ [ 'image' ] }
+							value={ section_image }
+							render={ ( { open } ) => (
+								<div>
+									{ section_image && (
+										<Button
+											isLink
+											isDestructive
+											onClick={ () =>
+												setAttributes( {
+													section_image: '',
+												} )
+											}
+										>
+											{ __( 'Remove Section Image' ) }
+										</Button>
+									) }
+									<Button
+										onClick={ open }
+										icon="upload"
+										className="editor-media-placeholder__button is-button is-default is-large"
+									>
+										{ __( 'Select Section Image' ) }
+									</Button>
+								</div>
+							) }
+						/>
+					</MediaUploadCheck>
 
+					<InputControl
+						label="Background Image Alternative Text"
+						value={section_image_alt}
+						onChange={(nextValue) => setAttributes({ section_image_alt: nextValue })}
+					/>
 					<InputControl
 						label="Background Image Class"
 						value={section_image_class}

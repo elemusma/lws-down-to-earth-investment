@@ -15,7 +15,7 @@ echo '<div class="col-12">';
 echo do_shortcode('[divider class="w-100" style="padding-bottom:50px;"]');
 echo '</div>';
 
-echo '<div class="col-lg-3 col-md-4 text-white">';
+echo '<div class="col-md-4 text-white">';
 echo '<a href="' . home_url() . '" title="Go back to the Home of Down to Earth Investments">';
 echo '<div style="width:100%;pointer-events:none;padding-top:15px;">';
 echo logoSVG();

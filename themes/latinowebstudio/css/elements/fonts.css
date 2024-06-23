@@ -63,10 +63,10 @@ a.text-black:hover {
 
 html,
 body {
-  font-family: 'poppinsregular';
+  font-family: 'pontiaclight';
 }
 h1,.h1,h2,.h2,h3,.h3,h4,.h4,h5,.h5,h6,.h6{
-  font-family: 'pontiacblack';
+  font-family: 'pontiacbold';
   line-height: 1;
   margin:0;
 }
@@ -75,10 +75,10 @@ h1, .h1 {
   font-size: 3.5rem;
 }
 h2, .h2 {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 h3, .h3 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 h4, .h4 {
   font-size: 2rem;
@@ -90,25 +90,9 @@ h5,.h5{
   font-size:1.25rem;
 }
 
-.light {
-  font-family: 'poppinslight';
-}
-
-.extra-light {
-  font-family: 'poppinsextralight';
-}
-
-.medium {
-  font-family: 'poppinsmedium';
-}
-
-.semi-bold{
-  font-family: 'poppinssemibold';
-}
-
 .bold,
 strong,b {
-  font-family: 'poppinsbold';
+  font-family: 'pontiacbold';
 }
 
 .checkmark li {
@@ -154,7 +138,7 @@ blockquote {
   font-size: 90%;
 }
 
-.pontiac-bold,h1,h2,h3,h4 {
+.pontiac-black {
   font-family: 'pontiacblack';
 }
 
