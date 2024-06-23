@@ -61,7 +61,7 @@ export default function save( { attributes } ) {
 										{ column.img && (
 											<img
 												src={ column.img }
-												alt={column.img.alt || column.title}
+												alt={column.title}
 												style={ column.img_style }
 												className={ column.img_class }
 											/>

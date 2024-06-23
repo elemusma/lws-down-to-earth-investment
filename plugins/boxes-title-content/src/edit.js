@@ -406,38 +406,49 @@ export default function Edit( { attributes, setAttributes } ) {
 											} }
 										/>
 										<MediaUploadCheck>
-  <MediaUpload
-    onSelect={(media) =>
-      updateColumn(index, 'img', {
-        url: media.url,
-        alt: media.alt, // Ensure to capture alt text from media
-      })
-    }
-    type="image"
-    allowedTypes={['image']}
-    value={column.img}
-    render={({ open }) => (
-      <div>
-        {column.img && (
-          <Button
-            isLink
-            isDestructive
-            onClick={() => updateColumn(index, 'img', '')}
-          >
-            {__('Remove Col Image')}
-          </Button>
-        )}
-        <Button
-          onClick={open}
-          icon="upload"
-          className="editor-media-placeholder__button is-button is-default is-large"
-        >
-          {__('Select Col Image')}
-        </Button>
-      </div>
-    )}
-  />
-</MediaUploadCheck>
+											<MediaUpload
+												onSelect={ ( media ) =>
+													updateColumn(
+														index,
+														'img',
+														media.url
+													)
+												}
+												type="image"
+												allowedTypes={ [ 'image' ] }
+												value={ column.img }
+												render={ ( { open } ) => (
+													<div>
+														{ column.img && (
+															<Button
+																isLink
+																isDestructive
+																onClick={ () =>
+																	updateColumn(
+																		index,
+																		'img',
+																		''
+																	)
+																}
+															>
+																{ __(
+																	'Remove Col Image'
+																) }
+															</Button>
+														) }
+														<Button
+															onClick={ open }
+															icon="upload"
+															className="editor-media-placeholder__button is-button is-default is-large"
+														>
+															{ __(
+																'Select Col Image'
+															) }
+														</Button>
+													</div>
+												) }
+											/>
+										</MediaUploadCheck>
 
 
 										<div style={{display:'flex'}}>
